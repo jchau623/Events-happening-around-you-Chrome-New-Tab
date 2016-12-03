@@ -1,0 +1,13 @@
+feature 1: show all upcoming events in <city>
+	- city choice determined by geolocation, otherwise let user input decide
+	- events scraped from Eventful, eventbrite...and what other places? How to filter out duplicates?
+		- only use Eventful for now..
+	- displayed how?
+		- in a timeline?
+		- in a calendar?
+	- NOTE: eventful requires api branding
+	- NOTE: eventful API limit is 30,000 calls per day
+
+feature 2: show weather and clock
+
+feature 3: 

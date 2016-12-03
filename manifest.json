@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "",
+  "description": "See what's happening around you and add events to your calendar",
+  "version": "0.01",
+
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_title": "Click here!"
+  },
+  "chrome_url_overrides" : {
+    "newtab": "html/main.html"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
