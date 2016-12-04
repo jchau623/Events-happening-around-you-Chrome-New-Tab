@@ -1,26 +1,17 @@
-"use strict";
-var React = require('react');
-var ReactDOM = require('react-dom');
+require('./utils.js')();
 
-class Container extends React.Component {
-	render() {
-		return (
-			<div className="locationSearchBarContainer">
-				<SearchBar />
-			</div>
-		);
+module.exports = function() {
+	this.getUserLocation = function() {
+		var userLocation = getCookieInfo(userLocation);
+		if (!userLocation) {
+			userLocation = setUserLocation();
+		}
+		return userLocation;
 	}
 }
 
-class SearchBar extends React.Component {
-	render() {
-		return (
-			<input className="searchBar" id="locationSearchBar" />
-		);
+function setUserLocation() {
+	if (navigator.geolocation) {
+
 	}
 }
-
-ReactDOM.render(
-	<Container />,
-	document.getElementById('container')
-);

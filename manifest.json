@@ -13,6 +13,8 @@
     "newtab": "/src/html/main.html"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "geolocation",
+    "cookies"
   ]
 }

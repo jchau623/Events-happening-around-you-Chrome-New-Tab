@@ -1,1 +1,1 @@
-../node_modules/.bin/browserify ../src/scripts/main.js -t babelify -o ../build/bundle.js
+../node_modules/.bin/browserify ../src/scripts/view.jsx -t babelify -o ../build/bundle.js

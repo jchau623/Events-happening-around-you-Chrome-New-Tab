@@ -20448,16 +20448,30 @@ module.exports = traverseAllChildren;
 module.exports = require('./lib/React');
 
 },{"./lib/React":155}],178:[function(require,module,exports){
+module.exports = function () {
+	this.getUserLocation = function () {
+		var cookie = document.cookie;
+		return cookie;
+	};
+};
+
+function setUserLocation() {}
+
+},{}],179:[function(require,module,exports){
 "use strict";
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+require('./main.js')();
 
 class Container extends React.Component {
 	render() {
 		return React.createElement(
 			'div',
-			{ className: 'locationSearchBarContainer' },
+			{ className: 'locationAndSearchBarContainer' },
+			'Your location: ',
+			getUserLocation(),
+			' (Change)',
 			React.createElement(SearchBar, null)
 		);
 	}
@@ -20471,4 +20485,4 @@ class SearchBar extends React.Component {
 
 ReactDOM.render(React.createElement(Container, null), document.getElementById('container'));
 
-},{"react":177,"react-dom":26}]},{},[178]);
+},{"./main.js":178,"react":177,"react-dom":26}]},{},[179]);
