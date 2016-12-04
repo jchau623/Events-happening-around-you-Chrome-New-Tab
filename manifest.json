@@ -6,11 +6,11 @@
   "version": "0.01",
 
   "browser_action": {
-    "default_icon": "img/icon.png",
+    "default_icon": "/src/img/icon.png",
     "default_title": "Click here!"
   },
   "chrome_url_overrides" : {
-    "newtab": "html/main.html"
+    "newtab": "/src/html/main.html"
   },
   "permissions": [
     "activeTab"

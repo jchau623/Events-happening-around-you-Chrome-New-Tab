@@ -1,0 +1,25 @@
+{
+  "name": "chrome-events-new-tab",
+  "version": "1.0.0",
+  "description": "See what's happening around you and add events to your calendar",
+  "main": "scripts/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jchau623/Events-happening-around-you-Chrome-New-Tab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jchau623/Events-happening-around-you-Chrome-New-Tab/issues"
+  },
+  "homepage": "https://github.com/jchau623/Events-happening-around-you-Chrome-New-Tab#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
+}
