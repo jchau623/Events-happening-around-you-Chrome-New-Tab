@@ -10,4 +10,12 @@ feature 1: show all upcoming events in <city>
 
 feature 2: show weather and clock
 
-feature 3: 
+feature 3: Show a Google Calendar widget on a second sliding panel. Have ability to add events from feature 1 to here.
+
+feature 4: Show a Google Maps widget. Any saved events with location data in Google Calendar widget (feature 3) will show up with a pin on the map. Each pin is clickable and an infobox pops up with event details.
+
+Layout:
+
+Left, main, 65-75% of screen space: A Google Maps widget. 
+Right, secondary panel, 25-35% of screen space: A widget of events in a list format 
+Second panel: Full page: Google Calendar widget

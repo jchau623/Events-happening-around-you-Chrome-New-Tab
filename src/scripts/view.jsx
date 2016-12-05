@@ -32,7 +32,7 @@ class LocationAndSearchBar extends React.Component {
 		return (
 			<div className="locationAndSearchBarContainer">
 				Your location: {location} (Change)
-				<SearchBar />
+				<SearchBar id="changeLocationSearchBar"/>
 			</div>
 		);
 
@@ -40,9 +40,12 @@ class LocationAndSearchBar extends React.Component {
 }
 
 class SearchBar extends React.Component {
+	componentDidMount() {
+		initGMapAutoComplete.call(this);
+	}
 	render() {
 		return (
-			<input className="searchBar" id="locationSearchBar" />
+			<input className="searchBar googleSearchAutoComplete" id={this.props.id}/>
 		);
 	}
 }
