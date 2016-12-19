@@ -12,7 +12,7 @@ module.exports = function() {
         _setUpSearchBar.call(this);
     }
     this.showHint = function(e) {
-        _showHint(e.target.value);
+        _showHint.call(this, e.target.value);
     }
 }
 
@@ -51,14 +51,23 @@ function _setUpSearchBar() {
 }
 
 function _showHint(value) {
-    console.log(value);
+    var query = value.trim().toLowerCase();
+    if (query.length === 0) {
+        return;
+    }
+    this.setState({loading: true});
     gMapsClient.placesAutoComplete({
-        input: value,
-        language: 'en'
+        input: query,
+        language: 'en',
+        type: '(cities)'
     }, function(err, response) {
-        if (!err) {
-            console.log(response.json);
+        this.setState({loading: false})
+        if (err) {
+            throw new Error(err);
         }
+        return !response.predictions ? [] : response.predictions.map(function(prediction) {
+            return prediction.description;
+        });
     })
 }
 

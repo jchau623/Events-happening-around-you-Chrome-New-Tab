@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+require('react-autosuggest');
 require('./main.js')();
 
 class Container extends React.Component {
@@ -43,10 +44,23 @@ class SearchBar extends React.Component {
 	constructor() {
 		super();
 		setUpSearchBar();
+		this.state = {
+			value: '',
+			suggestions: [],
+			loading: false
+		}
 	}
 	render() {
 		return (
-			<input className="searchBar googleSearchAutoComplete" id={this.props.id} onChange={showHint}/>
+			<Autosuggest 	className = "searchBar googleSearchAutoComplete" 
+							id = {this.props.id} 
+							// onChange = {showHint}
+							suggestions = {suggestions}
+							onSuggestionsFetchRequested = 
+							alwaysRenderSuggestions = {true}
+							getSuggestionValue =
+							renderSuggestion =
+							inputProps = />
 		);
 	}
 }
