@@ -11,8 +11,8 @@ class Container extends React.Component {
 }
 
 class LocationAndSearchBar extends React.Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
 			loadingLocation: true, 
 			location: "placeholder"
@@ -40,12 +40,13 @@ class LocationAndSearchBar extends React.Component {
 }
 
 class SearchBar extends React.Component {
-	componentDidMount() {
-		initGMapAutoComplete.call(this);
+	constructor() {
+		super();
+		setUpSearchBar();
 	}
 	render() {
 		return (
-			<input className="searchBar googleSearchAutoComplete" id={this.props.id}/>
+			<input className="searchBar googleSearchAutoComplete" id={this.props.id} onChange={showHint}/>
 		);
 	}
 }

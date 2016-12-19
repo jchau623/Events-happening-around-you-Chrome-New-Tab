@@ -15,7 +15,8 @@
   "permissions": [
     "activeTab",
     "geolocation",
-    "cookies"
+    "cookies",
+    "https://maps.googleapis.com/"
   ],
   "content_security_policy": "script-src 'self' https://ipinfo.io/json; object-src 'self'"
 }

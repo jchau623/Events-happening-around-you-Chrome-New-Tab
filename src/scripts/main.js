@@ -1,5 +1,5 @@
 require('./utils.js')();
-var $ = require("jquery");
+var $ = require('jquery');
 var gMapsClient = require('@google/maps').createClient({
     key: 'AIzaSyCEVaRhEVcMCD0GLoSn_a1LaSAh7z3htIw'
 });
@@ -8,13 +8,15 @@ module.exports = function() {
     this.getUserLocation = function() {
         _getUserLocation.call(this);
     }
-
-    this.initGMapAutoComplete = function() {
-        _initGMapAutoComplete.call(this);
+    this.setUpSearchBar = function() {
+        _setUpSearchBar.call(this);
+    }
+    this.showHint = function(e) {
+        _showHint(e.target.value);
     }
 }
 
-//exported function definitions //
+// exported function definitions //
 
 function _getUserLocation() {
     var userLocation = getCookieInfo("userLocation");
@@ -44,9 +46,23 @@ function _getUserLocation() {
     }
 }
 
-function _initGMapAutoComplete() {
-    
+function _setUpSearchBar() {
+    _showHint = require('throttle-debounce').debounce(300, _showHint);
 }
+
+function _showHint(value) {
+    console.log(value);
+    gMapsClient.placesAutoComplete({
+        input: value,
+        language: 'en'
+    }, function(err, response) {
+        if (!err) {
+            console.log(response.json);
+        }
+    })
+}
+
+
 
 // private functions //
 
